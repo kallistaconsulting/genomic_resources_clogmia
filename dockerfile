@@ -57,9 +57,10 @@ COPY nginx-drupal.conf /etc/nginx/sites-available/default
 RUN mkdir -p /data/blastdb /srv/shiny-server
 
 # Download resources for clogmia
-COPY genome-resources-clogmia.tar.gz /var/www/
 WORKDIR /var/www/
-RUN tar xfv genome-resources-clogmia.tar.gz && \ 
+#COPY genome-resources-clogmia.tar.gz /var/www/
+RUN wget https://github.com/kallistaconsulting/genomic_resources_clogmia/archive/refs/tags/v1.0.0.tar.gz &&\
+    tar xfv genome-resources-clogmia.tar.gz && \ 
     rm genome-resources-clogmia.tar.gz
 
 # Set up genome browser
@@ -89,5 +90,6 @@ EXPOSE 3838 3000 4567
 # Default command
 CMD ["/start_services.sh"]
 
-# Set up sequence server and links.rb
-RUN mv /var/www/genome-resources-clogmia/links.rb /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
+# Set up sequence server and links.rb (has to be after it's running?)
+RUN mv /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb.orig &&\
+    mv /var/www/genome-resources-clogmia/links.rb /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
