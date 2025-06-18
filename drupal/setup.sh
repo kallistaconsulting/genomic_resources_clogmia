@@ -21,10 +21,7 @@ cp /home/exouser/drupal/nginx-drupal.conf /etc/nginx/sites-available/default
 # Setup MariaDB initial database
 apt install -y php-fpm php-mysql php-gd php-xml php-mbstring php-curl
 apt-get update && apt-get install -y mariadb-server
-
-#echo "###################"
-#echo "password is clogmia"
-#echo "###################"
+mariadb-secure-installation
 
 mysql -u root -p < /home/exouser/drupal/init.sql
 mysql -u root -p drupal < /home/exouser/drupal/drupal-db.sql
