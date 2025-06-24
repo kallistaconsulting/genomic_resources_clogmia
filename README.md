@@ -27,6 +27,7 @@ cd genomic_resources_clogmia
 
 # Build and run the container
 sudo bash setup.sh
+```
 
 This runs a docker build command (docker build -t genome_browser .) and a docker run command.  The docker run command creates an environmental variable in the docker that contains the host IP (necessary for SequenceServer2.0 link backs to JBrowse) and links ports from the container to the host machine.
 
