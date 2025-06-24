@@ -62,11 +62,11 @@ WORKDIR /var/www/
 RUN wget https://github.com/kallistaconsulting/genomic_resources_clogmia/archive/refs/tags/v1.0.0.tar.gz &&\
     tar xfv v1.0.0.tar.gz && \ 
     rm v1.0.0.tar.gz && \
-    mv genomic_resources_clogmia-* genomic_resources_clogmia
+    mv genomic_resources_clogmia-* genomic-resources-clogmia
 
 # Set up genome browser
 RUN mkdir /jbrowse/clogmia && \
-    mv /var/www/genome-resources-clogmia/jbrowse2/* /jbrowse/clogmia && \ 
+    mv /var/www/genome_resources_clogmia/jbrowse2/* /jbrowse/clogmia && \ 
     cd /jbrowse/clogmia && \
     jbrowse sort-gff Clogmia_vNCBI.sorted.gff | bgzip > Clogmia_vNCBI.sorted.gff.gz && \ 
     tabix Clogmia_vNCBI.sorted.gff.gz
