@@ -66,7 +66,7 @@ RUN wget https://github.com/kallistaconsulting/genomic_resources_clogmia/archive
 
 # Set up genome browser
 RUN mkdir /jbrowse/clogmia && \
-    mv /var/www/genome_resources_clogmia/jbrowse2/* /jbrowse/clogmia && \ 
+    mv /var/www/genome-resources-clogmia/jbrowse2/* /jbrowse/clogmia && \ 
     cd /jbrowse/clogmia && \
     jbrowse sort-gff Clogmia_vNCBI.sorted.gff | bgzip > Clogmia_vNCBI.sorted.gff.gz && \ 
     tabix Clogmia_vNCBI.sorted.gff.gz
