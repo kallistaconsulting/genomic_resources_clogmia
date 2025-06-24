@@ -11,10 +11,6 @@ RUN apt-get update && apt-get install -y \
     libssl-dev libcurl4-openssl-dev libxml2-dev zlib1g-dev \
     && apt-get clean
 
-#    mysql-server \
-#    php-fpm php-mysql php-gd php-xml php-mbstring php-curl unzip \
-#    nginx gdebi-core \
-
 # Install Node.js 18
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs
@@ -51,17 +47,15 @@ RUN R -e "packageList <- c('BiocManager', 'shiny', 'bslib', 'shinyWidgets', 'ggp
            if(!'BiocManager' %in% installed.packages()[,'Package']) install.packages('BiocManager', repos='https://cloud.r-project.org/'); \
            if(length(biocList)) BiocManager::install(biocList)"
 
-# Configure NGINX for Drupal
-#COPY nginx-drupal.conf /etc/nginx/sites-available/default
-
 # Setup data directories
 RUN mkdir -p /data/blastdb /srv/shiny-server
 
 # Download resources for clogmia
 
-#COPY genome-resources-clogmia.tar.gz /var/www/
 RUN mkdir /var/www/ && \
     cd /var/www/ &&\
+    #You can always download a release and import it, rather than pulling direct from github && \
+    #COPY genome-resources-clogmia.tar.gz /var/www/ && \
     wget https://github.com/kallistaconsulting/genomic_resources_clogmia/releases/download/v1.0.1/genome-resources-clogmia.tar.gz &&\
     tar xfv genome-resources-clogmia.tar.gz && \ 
     rm genome-resources-clogmia.tar.gz
