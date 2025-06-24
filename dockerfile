@@ -60,7 +60,8 @@ RUN mkdir -p /data/blastdb /srv/shiny-server
 # Download resources for clogmia
 
 #COPY genome-resources-clogmia.tar.gz /var/www/
-RUN cd /var/www/ &&\
+RUN mkdir /var/www/ && \
+    cd /var/www/ &&\
     wget https://github.com/kallistaconsulting/genomic_resources_clogmia/releases/download/v1.0.1/genome-resources-clogmia.tar.gz &&\
     tar xfv genome-resources-clogmia.tar.gz && \ 
     rm genome-resources-clogmia.tar.gz
