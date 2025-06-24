@@ -61,7 +61,8 @@ WORKDIR /var/www/
 #COPY genome-resources-clogmia.tar.gz /var/www/
 RUN wget https://github.com/kallistaconsulting/genomic_resources_clogmia/archive/refs/tags/v1.0.0.tar.gz &&\
     tar xfv v1.0.0.tar.gz && \ 
-    rm v1.0.0.tar.gz
+    rm v1.0.0.tar.gz && \
+    mv genomic_resources_clogmia-* genomic_resources_clogmia
 
 # Set up genome browser
 RUN mkdir /jbrowse/clogmia && \
