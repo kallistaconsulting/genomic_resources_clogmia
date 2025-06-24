@@ -9,10 +9,11 @@ RUN apt-get update && apt-get install -y \
     python3 python3-pip ruby-full \
     openjdk-11-jre-headless samtools tabix \
     libssl-dev libcurl4-openssl-dev libxml2-dev zlib1g-dev \
-    mysql-server \
-    php-fpm php-mysql php-gd php-xml php-mbstring php-curl unzip \
-    nginx gdebi-core \
     && apt-get clean
+
+#    mysql-server \
+#    php-fpm php-mysql php-gd php-xml php-mbstring php-curl unzip \
+#    nginx gdebi-core \
 
 # Install Node.js 18
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
@@ -51,7 +52,7 @@ RUN R -e "packageList <- c('BiocManager', 'shiny', 'bslib', 'shinyWidgets', 'ggp
            if(length(biocList)) BiocManager::install(biocList)"
 
 # Configure NGINX for Drupal
-COPY nginx-drupal.conf /etc/nginx/sites-available/default
+#COPY nginx-drupal.conf /etc/nginx/sites-available/default
 
 # Setup data directories
 RUN mkdir -p /data/blastdb /srv/shiny-server
