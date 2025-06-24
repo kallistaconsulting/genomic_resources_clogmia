@@ -1,23 +1,41 @@
-# genomic_resources_clogmia
-resources for the docker version of the browser ecosystem
+# Genome Resources: Clogmia Start-Up
 
-## Installation - tools
-clone down the repo into home dir of fresh VM (tested on Jetstream)
+This project contains two components:
 
-run: sudo bash setup.sh
+1. A Docker container  
+2. A setup script for a pre-configured Drupal website to make finding and using tools easier.
 
-this will take ~30m to install jbrowse, blast, rnaseq and crispr tools, and populate them
+---
 
-you can stop here, or build the webpage to make organization easier
+## 1) Container (Required)
 
-## Installation - webpage
+The container provides a self-contained set of tools preinstalled and pre-configured with the genome data for *Clogmia albipunctata* (other versions upcoming):
 
-cd drupal
+- **JBrowse 2** (genome browser)  
+- **SequenceServer 2.0** (web-based BLAST server with links back to JBrowse)  
+- **Shiny Server** (for R/Shiny applications that link back to JBrowse and BLAST)  
+- **Dependencies** (Samtools, BLAST+, Tabix, R, Bioconductor, etc.)
 
-run: sudo bash setup.sh
+All tools are integrated with genomic data pulled from a GitHub release tarball.
 
-answer questions as they come, set password (I use "clogmia")
+### Installing the Container
 
-when asked for password, use this one.
+```bash
+# Clone the repository
+git clone https://github.com/kallistaconsulting/genomic_resources_clogmia.git
+cd genomic_resources_clogmia
 
-go to IP of VM -> drupal page is populated :)
+# Build and run the container
+sudo bash setup.sh
+
+This runs a docker build command (docker build -t genome_browser .) and a docker run command.  The docker run command creates an environmental variable in the docker that contains the host IP (necessary for SequenceServer2.0 link backs to JBrowse) and links ports from the container to the host machine.
+
+Note: this will take about 30m to install, mainly due to installation of R packages.  Testing indicated 40Gb root directory was sufficient, 20Gb was not.
+
+From here, you can run any of the tools from a web browser with the proper links:
+* IP:3000?config=clogmia.json  → JBrowse2 instance
+* IP:3838/freeCount/apps/DA/ → edgeR differential expression applications
+* IP:3838/freeCount/apps/FA/ → topGO and GSEA functional enrichment applications
+* IP:3838/crisprFinder → views pre-profiled transcriptome to aid in initial design of sgRNA
+* IP:3838/crisprViewer → views pre-created crispr sgRNA primer design tables
+* IP:4567 → SequenceServer2.0 instance with blast databases and JBrowse2 link backs
