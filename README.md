@@ -81,3 +81,15 @@ A links.rb file is provided in the data release, which allows custom links added
 * Genome data moved to /jbrowse/clogmia/
 * Blast databases moved to /data/blastdv/
 * Shiny code moved to /srv/shiny-server
+
+### Quick Reference of Docker Locations and Ports
+
+| Component        | Port | Path (inside container or local) | Description                                                  |
+|------------------|------|----------------------------------|--------------------------------------------------------------|
+| Shiny Server     | 3838 | /srv/shiny-server/              | Includes apps: freeCount, crisprFinder, crisprViewer         |
+| JBrowse 2        | 3000 | /jbrowse/clogmia/               | Preloaded with indexed Clogmia genome and GFF                |
+| SequenceServer   | 4567 | /data/blastdb/                  | BLAST databases for Clogmia                                  |
+| BLAST+ Tools     | —    | /usr/local/bin/                 | Version 2.16.0+, available in $PATH                          |
+| R                | —    | System-wide installation        | Includes core bioinformatics packages                        |
+| NGINX + PHP      | —    | /etc/nginx/                     | Dependencies for Drupal                                      |
+| Drupal           | 80   | /var/www/html/                  | Drupal-ready configuration                                   |
