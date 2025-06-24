@@ -93,3 +93,12 @@ A links.rb file is provided in the data release, which allows custom links added
 | R                | —    | System-wide installation        | Includes core bioinformatics packages                        |
 | NGINX + PHP      | —    | /etc/nginx/                     | Dependencies for Drupal                                      |
 | Drupal           | 80   | /var/www/html/                  | Drupal-ready configuration                                   |
+
+### Troubleshooting
+* If NGINX returns 502 errors:
+  * Confirm correct php8.X-fpm is running.  If launched on Ubuntu 22.04, use 8.1, if launched on Ubuntu 24.04, use 8.4.
+  * Verify fastcgi_pass in NGINX config points to the correct /run/php/php8.X-fpm.sock
+* If Shiny apps do not appear:
+  * Confirm the apps exist under /srv/shiny-server/
+  * Check that required R packages are installed
+* If gff doesn’t load in JBrowse, zoom in and hit the reload button.
