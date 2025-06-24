@@ -57,12 +57,13 @@ COPY nginx-drupal.conf /etc/nginx/sites-available/default
 RUN mkdir -p /data/blastdb /srv/shiny-server
 
 # Download resources for clogmia
-WORKDIR /var/www/
+
 #COPY genome-resources-clogmia.tar.gz /var/www/
-RUN wget -P /var/www/ https://github.com/kallistaconsulting/genomic_resources_clogmia/archive/refs/tags/v1.0.0.tar.gz &&\
-    tar xfv /var/www/v1.0.0.tar.gz && \ 
-    rm /var/www/v1.0.0.tar.gz && \
-    mv /var/www/genomic_resources_clogmia-* /var/www/genomic-resources-clogmia
+RUN cd /var/www/ &&\
+    wget https://github.com/kallistaconsulting/genomic_resources_clogmia/archive/refs/tags/v1.0.0.tar.gz &&\
+    tar xfv v1.0.0.tar.gz && \ 
+    rm v1.0.0.tar.gz && \
+    mv genomic_resources_clogmia-* genomic-resources-clogmia
 
 # Set up genome browser
 RUN mkdir /jbrowse/clogmia && \
