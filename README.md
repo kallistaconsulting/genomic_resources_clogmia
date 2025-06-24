@@ -40,7 +40,7 @@ From here, you can run any of the tools from a web browser with the proper links
 * IP:3838/crisprViewer → views pre-created crispr sgRNA primer design tables
 * IP:4567 → SequenceServer2.0 instance with blast databases and JBrowse2 link backs
 
-### 2) Webpage set up (optional but recommended)
+## 2) Webpage set up (optional but recommended)
 Tools are integrated into a pre-configured Drupal website that has links to all the above, plus locations for Downloads (upcoming), publications, etc.  An example is currently available at: http://149.165.151.125/home
 
 ### Installing the website
@@ -74,14 +74,14 @@ Provided script (nginx-drupal.conf) to deploy drupal if desired.  This file is c
 A links.rb file is provided in the data release, which allows custom links added to SequenceServer2.0, and within a container it must replace the main links.rb script.  Note, this may not restart with the new link.rb file, a fix is in progress.
 /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
 
-### Preloaded Data Locations
+## Preloaded Data Locations
 * Initial genomic resources are unpacked from data release listed on github, which can be updated with new versions of the data as needed.
 * Initial location: /var/www/
 * Genome data moved to /jbrowse/clogmia/
 * Blast databases moved to /data/blastdv/
 * Shiny code moved to /srv/shiny-server
 
-### Quick Reference of Docker Locations and Ports
+## Quick Reference of Docker Locations and Ports
 
 | Component        | Port | Path (inside container or local) | Description                                                  |
 |------------------|------|----------------------------------|--------------------------------------------------------------|
@@ -93,7 +93,7 @@ A links.rb file is provided in the data release, which allows custom links added
 | NGINX + PHP      | —    | /etc/nginx/                     | Dependencies for Drupal                                      |
 | Drupal           | 80   | /var/www/html/                  | Drupal-ready configuration                                   |
 
-### Troubleshooting
+## Troubleshooting
 * If NGINX returns 502 errors:
   * Confirm correct php8.X-fpm is running.  If launched on Ubuntu 22.04, use 8.1, if launched on Ubuntu 24.04, use 8.4.
   * Verify fastcgi_pass in NGINX config points to the correct /run/php/php8.X-fpm.sock
