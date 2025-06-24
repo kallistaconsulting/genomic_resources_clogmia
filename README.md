@@ -40,3 +40,26 @@ From here, you can run any of the tools from a web browser with the proper links
 * IP:3838/crisprFinder → views pre-profiled transcriptome to aid in initial design of sgRNA
 * IP:3838/crisprViewer → views pre-created crispr sgRNA primer design tables
 * IP:4567 → SequenceServer2.0 instance with blast databases and JBrowse2 link backs
+
+### 2) Webpage set up (optional but recommended)
+Tools are integrated into a pre-configured Drupal website that has links to all the above, plus locations for Downloads (upcoming), publications, etc.  An example is currently available at: http://149.165.151.125/home
+
+### Installing the website
+1. On the local machine:
+
+```bash
+cd /var/www/genomic_resources_clogmia/drupal
+```
+
+2. Edit init.sql
+This file defines your username, database name, and password.  You will want to edit this from the defaults to provide security, as the defaults are used and they are publicly known.  Change ‘drupalpass’ to any password you would like to use.
+
+3. Run install script:
+``` bash
+sudo bash setup.sh
+```
+
+This script will setup Drupal in the local machine’s /var/www/html directory.  Drupal 9.5.11 will be installed, the business theme used for the site will be pulled, and the mysql database that hold the site information will be imported.
+You will need to input the password you set in step 2.  
+
+You should now be able to access the website from your own IP/home (e.g. 149.165.151.125/home).  All tools are linked with dynamic links, meaning the host IP does not matter.  
