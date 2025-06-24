@@ -16,7 +16,7 @@ chown -R www-data:www-data /var/www/html
 
 #Configure NGINX for Drupal
 apt install -y nginx
-cp /home/exouser/genomic-resources-clogmia/drupal/nginx-drupal.conf /etc/nginx/sites-available/default
+cp /home/exouser/genomic_resources_clogmia/drupal/nginx-drupal.conf /etc/nginx/sites-available/default
 
 # Setup MariaDB initial database
 apt install -y php-fpm php-mysql php-gd php-xml php-mbstring php-curl
