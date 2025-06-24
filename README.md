@@ -63,3 +63,21 @@ This script will setup Drupal in the local machine’s /var/www/html directory. 
 You will need to input the password you set in step 2.  
 
 You should now be able to access the website from your own IP/home (e.g. 149.165.151.125/home).  All tools are linked with dynamic links, meaning the host IP does not matter.  
+
+### Container File Notes
+* Startup Script:
+/start_services.sh starts services within the container in the order they need to launch
+
+* NGINX Configuration:
+Provided script (nginx-drupal.conf) to deploy drupal if desired.  This file is copied into /etc/nginx/sites-available/default
+
+* SequenceServer Custom Links:
+A links.rb file is provided in the data release, which allows custom links added to SequenceServer2.0, and within a container it must replace the main links.rb script.  Note, this may not restart with the new link.rb file, a fix is in progress.
+/var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
+
+### Preloaded Data Locations
+* Initial genomic resources are unpacked from data release listed on github, which can be updated with new versions of the data as needed.
+* Initial location: /var/www/
+* Genome data moved to /jbrowse/clogmia/
+* Blast databases moved to /data/blastdv/
+* Shiny code moved to /srv/shiny-server
