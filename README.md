@@ -5,7 +5,6 @@ This project contains two components:
 1. A Docker container  
 2. A setup script for a pre-configured Drupal website to make finding and using tools easier.
 
----
 
 ## 1) Container (Required)
 
