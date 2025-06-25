@@ -57,7 +57,6 @@ This file defines your username, database name, and password.  You will want to 
 
 3. Run install script:
 This script will setup Drupal in the local machine’s /var/www/html directory.  Drupal 9.5.11 will be installed, the business theme used for the site will be pulled, and the mysql database that hold the site information will be imported.
-
 While installing, it will also ask you a couple of other questions.  Testing was done with:
 * unix_socket auth Y
 * reset root password (for ease, I set it the same as step 2)
@@ -71,9 +70,15 @@ You will then be asked to enter a password, use the one you set in step 2.
 sudo bash setup.sh
 ```
 
-4. You should now be able to access the website from your own IP (e.g. 149.165.151.125).  You will see a Drupal setup page, which you only have to do once.  Tested with Standard installation, and the information from the init.sql file (drupal is your database by default, drupaluser as username, and drupalpass as password, but you should have changed that.  Save and continue, reload IP/home.
+4. You should now be able to access the website from your own IP (e.g. 149.165.151.125).
+You will see a Drupal setup page, which you only have to do once.  Tested with Standard installation, and the information from the init.sql file (drupal is your database by default, drupaluser as username, and whatever you set as root password.  Save and continue, reload IP/home.
 The site should come up automatically now.  All tools are linked with dynamic links, meaning the host IP does not matter.
-For security, please immediately go into the Access tab and log in as user: admin, password: clogmia.  Now the drupal admin menu will appear at the top of the site.  Click people, and next to admin, click edit.  Change your password by typing your current, default password (clogmia) at the top under current password, then your new password next to password and again below when prompted.  Scroll to the bottom and save.  You now have secured access to this drupal site and can customize with basic Drupal methods.
+
+5. For security, please IMMEDIATELY:
+* Go into the Access tab and log in as user: admin, password: clogmia.
+* Now the drupal admin menu will appear at the top of the site.  Click people, and next to admin, click edit.
+* Change your password by typing the preset password (clogmia) at the top under 'Current password', then your new password next to 'Password' and again below when prompted.  Scroll to the bottom and save.
+You now have secured access to this drupal site and can customize with basic Drupal methods.
 
 ### Container File Notes
 * Startup Script:
