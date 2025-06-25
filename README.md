@@ -5,6 +5,7 @@ This project contains two components:
 1. A Docker container  
 2. A setup script for a pre-configured Drupal website to make finding and using tools easier.
 
+Project tested on an Ubuntu 24.04 VM default image from Jetstream2, quad size, root dir of 40GB.
 
 ## 1) Container (Required)
 
@@ -126,8 +127,8 @@ Location: release, goes into /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/s
 
 ## Troubleshooting
 * If NGINX returns 502 errors:
-  * Confirm correct php8.X-fpm is running.  If launched on Ubuntu 22.04, use 8.1, if launched on Ubuntu 24.04, use 8.4.
-  * Verify fastcgi_pass in NGINX config points to the correct /run/php/php8.X-fpm.sock
+  * try restarting php, mariadb, then nginx on command line
+  * check php version
 * If Shiny apps do not appear:
   * Confirm the apps exist under /srv/shiny-server/
   * Check that required R packages are installed
