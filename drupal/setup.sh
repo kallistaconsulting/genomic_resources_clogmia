@@ -25,3 +25,5 @@ mariadb-secure-installation
 
 mysql -u root -p < /home/exouser/genomic_resources_clogmia/drupal/init.sql
 mysql -u root -p drupal < /home/exouser/genomic_resources_clogmia/drupal/drupal-db.sql
+
+systemctl restart nginx
