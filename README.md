@@ -101,9 +101,7 @@ You now have secured access to this drupal site and can customize with basic Dru
 * drupal/nginx-drupal.conf is an NGINX configuration script to deploy drupal if desired.  This file is copied into /etc/nginx/sites-available/default
 * drupal/init.sql is an initialization script for the drupal site
 * drupal/drupal-db.sql holds the pre-made drupal site
-
-* SequenceServer Custom Links:
-A links.rb file is provided in the data release, which allows custom links added to SequenceServer2.0, and within a container (running as root) it must replace the main links.rb script.  Note, this may misbehave with restarting, but I haven't narrowed that down yet to make a fix if needed.  You can always reinstall and repull the links.rb from the release if absolutely necessary.
+* SequenceServer Custom Links:  A links.rb file is provided in the data release, which allows custom links added to SequenceServer2.0, and within a container (running as root) it must replace the main links.rb script.  Note, this may misbehave with restarting, but I haven't narrowed that down yet to make a fix if needed.  You can always reinstall and repull the links.rb from the release if absolutely necessary.
 Location: release, goes into /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
 
 ## Preloaded Data Locations
