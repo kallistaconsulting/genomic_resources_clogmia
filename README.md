@@ -41,7 +41,7 @@ From here, you can run any of the tools from a web browser with the proper links
 * IP:4567 → SequenceServer2.0 instance with blast databases and JBrowse2 link backs
 
 ## 2) Webpage set up (optional but recommended)
-Tools are integrated into a pre-configured Drupal website that is customizable as any Drupal site, but organizes the tools and resources in point and click interface to make it easy to remember.  There are additional items in the website such as pages for Downloads (upcoming), publications, etc.  An example is currently available at: http://149.165.151.125/home
+Tools are integrated into a pre-configured Drupal website that is customizable as any Drupal site, but organizes the tools and resources in point and click interface to make it easy to remember.  There are additional items in the website such as pages for downloading the references used, publications associated with the site, etc.  An example is currently available at: http://149.165.151.125/home
 
 This takes ~5m to set up.
 
@@ -81,6 +81,18 @@ The site should come up automatically now.  All tools are linked with dynamic li
   * Now the drupal admin menu will appear at the top of the site.  Click people, and next to admin, click edit.
   * Change your password by typing the preset password (clogmia) at the top under 'Current password', then your new password next to 'Password' and again below when prompted.  Scroll to the bottom and save.
 You now have secured access to this drupal site and can customize with basic Drupal methods.
+
+### Custom Features
+* Customizable genome browser website with ~four commands!
+* JBrowse links to various databases - UniProt, FlyBase, Google Scholar
+* Sequence Server to JBrowse2 links
+* Shiny Server that will house custom versions of packages to link back to JBrowse
+
+### Coming soon
+* Usecases and tutorials coming soon
+* Links back from shiny apps to JBrowse
+* Profiling for CRISPR sgRNA with links to JBrowse
+* BSGenome object for genome (very soon!)
 
 ### Container File Notes
 * Startup Script:
