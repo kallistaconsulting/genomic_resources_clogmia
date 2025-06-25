@@ -34,6 +34,6 @@ systemctl restart nginx
 # Pull and Move Files for Download
 mkdir /var/www/html/files
 docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_genome_vNCBI.fa /var/www/html/files/
-docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.gff /var/www/html/files/
-docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.transcripts.gff /var/www/html/files/
-docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.proteins.gff /var/www/html/files/
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.gff3 /var/www/html/files/
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.transcripts.fa /var/www/html/files/
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.proteins.fa /var/www/html/files/
