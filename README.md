@@ -41,7 +41,7 @@ From here, you can run any of the tools from a web browser with the proper links
 * IP:4567 → SequenceServer2.0 instance with blast databases and JBrowse2 link backs
 
 ## 2) Webpage set up (optional but recommended)
-Tools are integrated into a pre-configured Drupal website that has links to all the above, plus locations for Downloads (upcoming), publications, etc.  An example is currently available at: http://149.165.151.125/home
+Tools are integrated into a pre-configured Drupal website that is customizable as any Drupal site, but organizes the tools and resources in point and click interface to make it easy to remember.  There are additional items in the website such as pages for Downloads (upcoming), publications, etc.  An example is currently available at: http://149.165.151.125/home
 
 ### Installing the website
 1. On the local machine:
@@ -59,7 +59,10 @@ sudo bash setup.sh
 ```
 
 This script will setup Drupal in the local machine’s /var/www/html directory.  Drupal 9.5.11 will be installed, the business theme used for the site will be pulled, and the mysql database that hold the site information will be imported.
-You will need to input the password you set in step 2.  It will also ask you a couple of other questions.  Testing was done with unix_socket auth Y, reset root password (for security, do this!), remove anon users Y, disallow root login remotely, remove test database Y, and reload privilege tables now Y.
+
+You will need to input the password you set in step 2.  It will also ask you a couple of other questions.  Testing was done with unix_socket auth Y, reset root password (for ease, I set it the same as step 2), remove anon users Y, disallow root login remotely, remove test database Y, and reload privilege tables now Y.
+
+You will then be asked to Enter a password, use the one you set.
 
 You should now be able to access the website from your own IP/home (e.g. 149.165.151.125/home).  All tools are linked with dynamic links, meaning the host IP does not matter.  
 
