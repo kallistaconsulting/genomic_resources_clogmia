@@ -7,6 +7,7 @@ curl -Lo drupal.tar.gz https://www.drupal.org/files/projects/drupal-9.5.11.tar.g
 tar -xzf drupal.tar.gz --strip-components=1
 rm drupal.tar.gz
 
+# Install business themes used originally
 cd /var/www/html/themes
 wget https://ftp.drupal.org/files/projects/business-9.1.x-dev.tar.gz
 tar xfv business-9.1.x-dev.tar.gz
@@ -14,7 +15,7 @@ rm business-9.1.x-dev.tar.gz
 
 chown -R www-data:www-data /var/www/html
 
-#Configure NGINX for Drupal
+# Configure NGINX for Drupal
 apt install -y nginx
 cp /home/exouser/genomic_resources_clogmia/drupal/nginx-drupal.conf /etc/nginx/sites-available/default
 cp -r /home/exouser/genomic_resources_clogmia/drupal/files /var/www/html/
@@ -27,4 +28,12 @@ mariadb-secure-installation
 mysql -u root -p < /home/exouser/genomic_resources_clogmia/drupal/init.sql
 mysql -u root -p drupal < /home/exouser/genomic_resources_clogmia/drupal/drupal-db.sql
 
+# Restart nginx for drupal boot
 systemctl restart nginx
+
+# Pull and Move Files for Download
+mkdir /var/www/html/files
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_genome_vNCBI.fa /var/www/html/files/
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.gff /var/www/html/files/
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.transcripts.gff /var/www/html/files/
+docker cp genome_browser:/var/www/genome-resources-clogmia/genome_files/Clogmia_vNCBI.proteins.gff /var/www/html/files/
