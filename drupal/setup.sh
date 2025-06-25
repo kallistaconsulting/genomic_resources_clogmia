@@ -23,5 +23,5 @@ apt install -y php-fpm php-mysql php-gd php-xml php-mbstring php-curl
 apt-get update && apt-get install -y mariadb-server
 mariadb-secure-installation
 
-mysql -u root -p < /home/exouser/drupal/init.sql
-mysql -u root -p drupal < /home/exouser/drupal/drupal-db.sql
+mysql -u root -p < /home/exouser/genomic_resources_clogmia/drupal/init.sql
+mysql -u root -p drupal < /home/exouser/genomic_resources_clogmia/drupal/drupal-db.sql
