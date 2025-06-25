@@ -75,10 +75,10 @@ You will see a Drupal setup page, which you only have to do once.  Tested with S
 The site should come up automatically now.  All tools are linked with dynamic links, meaning the host IP does not matter.
 
 5. For security, please IMMEDIATELY:
-* Go into the Access tab and log in as user: admin, password: clogmia.
-* Now the drupal admin menu will appear at the top of the site.  Click people, and next to admin, click edit.
-* Change your password by typing the preset password (clogmia) at the top under 'Current password', then your new password next to 'Password' and again below when prompted.  Scroll to the bottom and save.
-You now have secured access to this drupal site and can customize with basic Drupal methods.
+   * Go into the Access tab and log in as user: admin, password: clogmia.
+   * Now the drupal admin menu will appear at the top of the site.  Click people, and next to admin, click edit.
+   * Change your password by typing the preset password (clogmia) at the top under 'Current password', then your new password next to 'Password' and again below when prompted.  Scroll to the bottom and save.
+   You now have secured access to this drupal site and can customize with basic Drupal methods.
 
 ### Container File Notes
 * Startup Script:
