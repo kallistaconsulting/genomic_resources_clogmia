@@ -5,7 +5,7 @@ This project contains two components:
 1. A Docker container  
 2. A setup script for a pre-configured Drupal website to make finding and using tools easier.
 
-Project tested on an Ubuntu 24.04 VM default image from Jetstream2, quad size, root dir of 40GB.
+Project tested on an Ubuntu 24.04 VM default image from Jetstream2, m3.quad size (4 core, 15GB RAM), with a root dir bumped up to 40GB.
 
 ## 1) Container (Required)
 
