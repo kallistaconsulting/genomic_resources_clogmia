@@ -65,7 +65,7 @@ While installing, it will also ask you a couple of other questions.  Testing was
   * remove test database Y
   * reload privilege tables now Y.
 
-You will then be asked to enter a password, use the one you set in step 2.
+  You will then be asked to enter a password, use the one you set in step 2.
 
 ``` bash
 sudo bash setup.sh
