@@ -128,7 +128,7 @@ Location: release, goes into /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/s
 ## Troubleshooting
 * If NGINX returns 502 errors:
   * try restarting php, mariadb, then nginx on command line
-  * check php version
+  * check php version - ubuntu 22.04 wants 8.1, ubuntu 24.04 wants 8.3.  Edit /etc/nginx/sites-available/nginx-drupal.conf to reflect host VM (default 24.04)
 * If the drupal site is super ugly - go to Appearance -> Themes, switch to Claro, etc and then back.
 * If Shiny apps do not appear:
   * Confirm the apps exist under /srv/shiny-server/
