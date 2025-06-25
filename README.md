@@ -114,15 +114,15 @@ A links.rb file is provided in the data release, which allows custom links added
 
 ## Quick Reference of Docker Locations and Ports
 
-| Component        | Port | Path (inside container or local) | Description                                                  |
+| Component        | Port | Path (inside 'c'ontainer or 'l'ocal) | Description                                                  |
 |------------------|------|----------------------------------|--------------------------------------------------------------|
-| Shiny Server     | 3838 | /srv/shiny-server/              | Includes apps: freeCount, crisprFinder, crisprViewer         |
-| JBrowse 2        | 3000 | /jbrowse/clogmia/               | Preloaded with indexed Clogmia genome and GFF                |
-| SequenceServer   | 4567 | /data/blastdb/                  | BLAST databases for Clogmia                                  |
-| BLAST+ Tools     | —    | /usr/local/bin/                 | Version 2.16.0+, available in $PATH                          |
-| R                | —    | System-wide installation        | Includes core bioinformatics packages                        |
-| NGINX + PHP      | —    | /etc/nginx/                     | Dependencies for Drupal                                      |
-| Drupal           | 80   | /var/www/html/                  | Drupal-ready configuration                                   |
+| Shiny Server     | 3838 | /srv/shiny-server/ (c)             | Includes apps: freeCount, crisprFinder, crisprViewer         |
+| JBrowse 2        | 3000 | /jbrowse/clogmia/  (c)             | Preloaded with indexed Clogmia genome and GFF                |
+| SequenceServer   | 4567 | /data/blastdb/     (c)             | BLAST databases for Clogmia                                  |
+| BLAST+ Tools     | —    | /usr/local/bin/    (c)             | Version 2.16.0+, available in $PATH                          |
+| R                | —    | System-wide installation  (c)      | Includes core bioinformatics packages                        |
+| NGINX + PHP      | —    | /etc/nginx/        (l)             | Dependencies for Drupal                                      |
+| Drupal           | 80   | /var/www/html/     (l)             | Drupal-ready configuration                                   |
 
 ## Troubleshooting
 * If NGINX returns 502 errors:
