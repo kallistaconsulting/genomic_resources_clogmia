@@ -95,16 +95,16 @@ You now have secured access to this drupal site and can customize with basic Dru
 * Profiling for CRISPR sgRNA with links to JBrowse
 * BSGenome R package for genome (very soon!)
 
-### Container File Notes
-* Startup Script:
-/start_services.sh starts services within the container in the order they need to launch
-
-* NGINX Configuration:
-Provided script (nginx-drupal.conf) to deploy drupal if desired.  This file is copied into /etc/nginx/sites-available/default
+### File Notes
+* start_services.sh starts services within the container in the order they need to launch
+* setup.sh, one for each step, are simply wrapper scripts to make installation easy
+* drupal/nginx-drupal.conf is an NGINX configuration script to deploy drupal if desired.  This file is copied into /etc/nginx/sites-available/default
+* drupal/init.sql is an initialization script for the drupal site
+* drupal/drupal-db.sql holds the pre-made drupal site
 
 * SequenceServer Custom Links:
-A links.rb file is provided in the data release, which allows custom links added to SequenceServer2.0, and within a container it must replace the main links.rb script.  Note, this may not restart with the new link.rb file, a fix is in progress.
-/var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
+A links.rb file is provided in the data release, which allows custom links added to SequenceServer2.0, and within a container (running as root) it must replace the main links.rb script.  Note, this may misbehave with restarting, but I haven't narrowed that down yet to make a fix if needed.  You can always reinstall and repull the links.rb from the release if absolutely necessary.
+Location: release, goes into /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/sequenceserver/links.rb
 
 ## Preloaded Data Locations
 * Initial genomic resources are unpacked from data release listed on github, which can be updated with new versions of the data as needed.
@@ -112,11 +112,12 @@ A links.rb file is provided in the data release, which allows custom links added
 * Genome data moved to /jbrowse/clogmia/
 * Blast databases moved to /data/blastdv/
 * Shiny code moved to /srv/shiny-server
+* Outside of container: /var/www/html/files has a copy genome, gff, transcripts, proteins file for download
 
 ## Quick Reference of Docker Locations and Ports
 
 | Component        | Port | Path (inside 'c'ontainer or 'l'ocal) | Description                                                  |
-|------------------|------|----------------------------------|--------------------------------------------------------------|
+|------------------|------|------------------------------------|--------------------------------------------------------------|
 | Shiny Server     | 3838 | /srv/shiny-server/ (c)             | Includes apps: freeCount, crisprFinder, crisprViewer         |
 | JBrowse 2        | 3000 | /jbrowse/clogmia/  (c)             | Preloaded with indexed Clogmia genome and GFF                |
 | SequenceServer   | 4567 | /data/blastdb/     (c)             | BLAST databases for Clogmia                                  |
