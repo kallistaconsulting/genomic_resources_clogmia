@@ -129,6 +129,7 @@ Location: release, goes into /var/lib/gems/3.0.0/gems/sequenceserver-2.0.0/lib/s
 * If NGINX returns 502 errors:
   * try restarting php, mariadb, then nginx on command line
   * check php version
+* If the drupal site is super ugly - go to Appearance -> Themes, switch to Claro, etc and then back.
 * If Shiny apps do not appear:
   * Confirm the apps exist under /srv/shiny-server/
   * Check that required R packages are installed
