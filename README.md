@@ -83,7 +83,8 @@ The site should come up automatically now.  All tools are linked with dynamic li
 You now have secured access to this drupal site and can customize with basic Drupal methods.
 
 ### Custom Features
-* Customizable genome browser website with ~four commands!
+* Customizable genome browser website with very minimal command line
+* Runnable on any VM with docker, tested on Jetstream2 Cloud
 * JBrowse links to various databases - UniProt, FlyBase, Google Scholar
 * Sequence Server to JBrowse2 links
 * Shiny Server that will house custom versions of packages to link back to JBrowse
@@ -92,7 +93,7 @@ You now have secured access to this drupal site and can customize with basic Dru
 * Usecases and tutorials coming soon
 * Links back from shiny apps to JBrowse
 * Profiling for CRISPR sgRNA with links to JBrowse
-* BSGenome object for genome (very soon!)
+* BSGenome R package for genome (very soon!)
 
 ### Container File Notes
 * Startup Script:
