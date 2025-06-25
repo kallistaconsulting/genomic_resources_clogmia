@@ -59,7 +59,7 @@ sudo bash setup.sh
 ```
 
 This script will setup Drupal in the local machine’s /var/www/html directory.  Drupal 9.5.11 will be installed, the business theme used for the site will be pulled, and the mysql database that hold the site information will be imported.
-You will need to input the password you set in step 2.  
+You will need to input the password you set in step 2.  It will also ask you a couple of other questions.  Testing was done with unix_socket auth Y, reset root password (for security, do this!), remove anon users Y, disallow root login remotely, remove test database Y, and reload privilege tables now Y.
 
 You should now be able to access the website from your own IP/home (e.g. 149.165.151.125/home).  All tools are linked with dynamic links, meaning the host IP does not matter.  
 
