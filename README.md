@@ -59,12 +59,11 @@ This file defines your username, database name, and password.  You will want to 
 ``` bash
 sudo bash setup.sh
 ```
+This script will setup Drupal in the local machine’s /var/www/html directory.  Drupal 9.5.11 will be installed, the business theme used for the site will be pulled, and the mysql database that hold the site information will be imported.
 
-  This script will setup Drupal in the local machine’s /var/www/html directory.  Drupal 9.5.11 will be installed, the business theme used for the site will be pulled, and the mysql database that hold the site information will be imported.
+You will need to input the password you set in step 2.  It will also ask you a couple of other questions.  Testing was done with unix_socket auth Y, reset root password (for ease, I set it the same as step 2), remove anon users Y, disallow root login remotely, remove test database Y, and reload privilege tables now Y.
 
-  You will need to input the password you set in step 2.  It will also ask you a couple of other questions.  Testing was done with unix_socket auth Y, reset root password (for ease, I set it the same as step 2), remove anon users Y, disallow root login remotely, remove test database Y, and reload privilege tables now Y.
-
-  You will then be asked to enter a password, use the one you set in step 2.
+You will then be asked to enter a password, use the one you set in step 2.
 
 4. You should now be able to access the website from your own IP (e.g. 149.165.151.125).  You will see a Drupal setup page, which you only have to do once.  Tested with Standard installation, and the information from the init.sql file (drupal is your database by default, drupaluser as username, and drupalpass as password, but you should have changed that.  Save and continue, reload IP/home.
 
