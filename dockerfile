@@ -75,7 +75,8 @@ RUN cd /data/blastdb/ && \
 RUN cd /srv/shiny-server/ && \
     mv /var/www/genome-resources-clogmia/apps/freeCount/ /srv/shiny-server/ && \
     mv /var/www/genome-resources-clogmia/apps/crisprFinder/ /srv/shiny-server/ && \
-    mv /var/www/genome-resources-clogmia/apps/crisprViewer/ /srv/shiny-server/
+    mv /var/www/genome-resources-clogmia/apps/crisprViewer/ /srv/shiny-server/ && \
+    sed -i "s/HOST_IP/$HOST_IP/g" /srv/shiny-server/crisprFinder/app.R
 
 # Copy startup script
 COPY start_services.sh /start_services.sh
