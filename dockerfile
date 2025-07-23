@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     curl wget gnupg build-essential git nano \
     python3 python3-pip ruby-full \
     openjdk-11-jre-headless samtools tabix \
-    libssl-dev libcurl4-openssl-dev libxml2-dev zlib1g-dev \
+    libssl-dev libcurl4-openssl-dev libxml2-dev zlib1g-dev libfontconfig1-dev\
     && apt-get clean
 
 # Install Node.js 18
@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y r-base gdebi-core wget && \
     gdebi -n shiny-server-1.5.23.1030-amd64.deb && \
     rm shiny-server-1.5.23.1030-amd64.deb
 
-RUN R -e "packageList <- c('BiocManager', 'shiny', 'bslib', 'shinyWidgets', 'ggplot2', 'rcartocolor', 'dplyr', 'statmod', 'pheatmap', 'ggplotify', 'tidyr', 'eulerr'); \
+RUN R -e "packageList <- c('BiocManager', 'shiny', 'bslib', 'shinyWidgets', 'ggplot2', 'rcartocolor', 'dplyr', 'statmod', 'pheatmap', 'ggplotify', 'tidyr', 'eulerr', 'kableExtra); \
            biocList <- c('edgeR', 'topGO', 'Rgraphviz', 'crispRdesignR', 'seqinr', 'BSgenome'); \
            newPackages <- packageList[!(packageList %in% installed.packages()[,'Package'])]; \
            if(length(newPackages)) install.packages(newPackages, repos='https://cloud.r-project.org/'); \
