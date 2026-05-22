@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     curl wget gnupg build-essential git nano apt-utils\
     python3 python3-pip ruby-full gfortran libreadline-dev libuv1-dev libharfbuzz-dev\
     openjdk-11-jre-headless samtools tabix libx11-dev libxt-dev libbz2-dev\
-    libssl-dev libcurl4-openssl-dev libxml2-dev zlib1g-dev libfontconfig1-dev\
+    libssl-dev libcurl4-openssl-dev libxml2-dev zlib1g-dev libfontconfig1-dev libfribidi-dev\
     && apt-get clean
 
 # Install Node.js 22
