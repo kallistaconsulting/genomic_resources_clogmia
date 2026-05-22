@@ -65,7 +65,8 @@ RUN mkdir /jbrowse/clogmia && \
     mv /var/www/genome-resources-clogmia/jbrowse2/* /jbrowse/clogmia && \ 
     cd /jbrowse/clogmia && \
     jbrowse sort-gff Clogmia_vNCBI.sorted.gff | bgzip > Clogmia_vNCBI.sorted.gff.gz && \ 
-    tabix Clogmia_vNCBI.sorted.gff.gz
+    tabix Clogmia_vNCBI.sorted.gff.gz && \
+    jbrowse text-index --attributes=Name,ID,gene_name,product,locus_tag,note --assemblies="Clogmia albipunctata NCBI v1"
 
 # Set up blast databases
 RUN cd /data/blastdb/ && \
