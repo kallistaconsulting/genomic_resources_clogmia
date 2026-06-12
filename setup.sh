@@ -1,3 +1,7 @@
+#VM
+HOST_IP=$(curl -s ifconfig.me)
+
+#Container
 docker build -t genome_browser .
 docker run -d \
   --name genome_browser \
