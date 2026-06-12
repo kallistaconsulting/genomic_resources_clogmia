@@ -3,6 +3,8 @@ FROM ubuntu:22.04
 LABEL maintainer="sheri.anne.sanders@gmail.com"
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG HOST_IP
+
 # Install system packages
 RUN apt-get update && apt-get install -y \
     curl wget gnupg build-essential git nano apt-utils\
