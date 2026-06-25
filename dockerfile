@@ -79,9 +79,9 @@ RUN cd /srv/shiny-server/ && \
     mv /var/www/genome-resources-clogmia/apps/freeCount/ /srv/shiny-server/ && \
     mv /var/www/genome-resources-clogmia/apps/crisprFinder/ /srv/shiny-server/ && \
     mv /var/www/genome-resources-clogmia/apps/crisprViewer/ /srv/shiny-server/ && \
-    sed -i "s/HOST_IP/$HOST_IP/g" /srv/shiny-server/crisprFinder/app.R && \
+    sed -i "s/HOST_IP/$HOST_IP/g" /srv/shiny-server/crispr*/app.R && \
     R CMD INSTALL /srv/shiny-server/crisprFinder/BSgenome.Calbi.UChi_1.0.0.tar.gz
-
+    
 # Copy startup script
 COPY start_services.sh /start_services.sh
 RUN chmod +x /start_services.sh
