@@ -58,7 +58,7 @@ RUN mkdir /var/www/ && \
     cd /var/www/ &&\
     #You can always download a release and import it, rather than pulling direct from github && \
     #COPY genome-resources-clogmia.tar.gz /var/www/ && \
-    wget https://github.com/kallistaconsulting/genomic_resources_clogmia/releases/download/v1.0.4/genome-resources-clogmia.tar.gz &&\
+    wget https://github.com/kallistaconsulting/genomic_resources_clogmia/releases/download/v1.0.5/genome-resources-clogmia.tar.gz &&\
     tar xfv genome-resources-clogmia.tar.gz && \ 
     rm genome-resources-clogmia.tar.gz
 
